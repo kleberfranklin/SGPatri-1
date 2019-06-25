@@ -23,7 +23,6 @@ import br.com.Modelo.TipoExpedienteDAO;
 import br.com.Modelo.Usuario;
 import br.com.Modelo.UsuarioDAO;
 import java.util.List;
-        
 
 
 

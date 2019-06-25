@@ -1,0 +1,13 @@
+.gitignore
+
+src/java/br/com/Modelo/Auth.java
+src/java/br/com/Modelo/FabricaConexao.java
+/test/
+test
+src/java/br/com/Modelo/Auth.java
+/test
+build/web/WEB-INF/classes/br/com/Modelo/FabricaConexao.class
+build/web/WEB-INF/classes/br/com/Modelo/Auth.class
+/dist/nbprojectprivate
+/dist/
+/build/

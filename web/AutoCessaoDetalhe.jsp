@@ -11,6 +11,12 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js" integrity="sha512-3Wcxp7F9bV2pl+MBgrL6Pz7AJASLpemmQPIiPA0lDs3ImF0z4JuuMIBPeirLbgIuhfH2gJyGWZjvm6M+Zr7L6Q==" crossorigin=""></script>
+
+=======
+>>>>>>> 6bdfb37c59a8fbfac7d8177a454625dd10e4db48
     <jsp:include page = "include/head.jsp" />
     
     <body class="no-skin">
@@ -23,7 +29,11 @@
             <jsp:include page = "javaScritp/maskProcesso.html" />
             <jsp:include page = "javaScritp/somenteNum.html" />
             <jsp:include page = "javaScritp/alertEffect.html" />
+<<<<<<< HEAD
+
+=======
             
+>>>>>>> 6bdfb37c59a8fbfac7d8177a454625dd10e4db48
 
             <!--Verificação de acesso  -->
             <c:set var="acessoPerfil" value="${sessionPerfil}" />
@@ -1782,6 +1792,9 @@
                                             </div>
                                         </div>
 
+<<<<<<< HEAD
+
+=======
                                         <!--Inicico da tab-pane Poígio -->
                                         <div id="poligono" class="tab-pane " >
                                             <h5 class="header smaller lbl"><strong>POLÍGONO</strong></h5>
@@ -1789,6 +1802,7 @@
                                                 
                                             </labe>
                                         </div>
+>>>>>>> 6bdfb37c59a8fbfac7d8177a454625dd10e4db48
 
                                         <!-- Inicio do formulario Validação -->                             
                                         <div id="validacao" class="tab-pane 
@@ -1963,7 +1977,12 @@
                                         </div>
 
 
+                                        <!--Inicico da tab-pane Poígio -->
+                                        <div id="poligono" class="tab-pane">
+                                            <h5 class="header smaller lbl"><strong>Poligono</strong></h5>
+                                            <div id="mapid" style="width: 800px; height: 600px; position: relative; "></div>
 
+                                        </div>
 
 
                                     </div>
@@ -1971,7 +1990,11 @@
                             </div>    
                         </div>        
 
+<<<<<<< HEAD
+                        <jsp:include page="include/leaflet.jsp" />
+=======
                         
+>>>>>>> 6bdfb37c59a8fbfac7d8177a454625dd10e4db48
                         <jsp:include page = "include/footer.jsp" />
                         <jsp:include page = "javaScritp/carregado.html" />
 

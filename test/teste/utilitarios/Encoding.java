@@ -16,8 +16,6 @@ public class Encoding {
     
     String[] codes = { "ISO-8859-1", "UTF-8", "UTF-16" };
     String palavra = "a";
-    
-    
  
     for (String encoding : codes) {
       byte[] b = palavra.getBytes(encoding);

@@ -48,8 +48,9 @@ public class TipoDespachoDAO {
             throw new RuntimeException(e);
         } finally {
 //            rs.close();
-//            stmt.close();
-//            connection.close();
+            stmt.close();
+            connection.close();
+
         }
     }
 
@@ -64,7 +65,7 @@ public class TipoDespachoDAO {
                 + "LIMIT ? OFFSET ? ");
 
         try {
-            List<TipoDespacho> lisTpEx = new ArrayList<TipoDespacho>();
+            List<TipoDespacho> lisTpDes = new ArrayList<TipoDespacho>();
             stmt = connection.prepareStatement(sql);
                 stmt.setString(1, '%' + q + '%');
                 stmt.setString(2, '%' + q + '%');
@@ -73,20 +74,21 @@ public class TipoDespachoDAO {
 
             rs = stmt.executeQuery();
             while (rs.next()) {
-                TipoDespacho tpEx = new TipoDespacho();
-                tpEx.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
-                tpEx.setSgTipoDespacho(rs.getString("sg_despacho"));
-                tpEx.setNmTipoDespacho(rs.getString("nm_despacho"));
-                tpEx.setNmLogin(rs.getString("nm_login"));
-                tpEx.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
-                lisTpEx.add(tpEx);
+                TipoDespacho tpDes = new TipoDespacho();
+                tpDes.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
+                tpDes.setSgTipoDespacho(rs.getString("sg_despacho"));
+                tpDes.setNmTipoDespacho(rs.getString("nm_despacho"));
+                tpDes.setNmLogin(rs.getString("nm_login"));
+                tpDes.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
+                lisTpDes.add(tpDes);
+
             }
             stmt.close();
-            return lisTpEx;
+            return lisTpDes;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -106,27 +108,29 @@ public class TipoDespachoDAO {
             stmt.setInt(1, pkTipoDespacho);
             rs = stmt.executeQuery();
 
-            TipoDespacho tpEx = new TipoDespacho();
+            TipoDespacho tpDes = new TipoDespacho();
             if (rs.next()) {
-                tpEx.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
-                tpEx.setSgTipoDespacho(rs.getString("sg_despacho"));
-                tpEx.setNmTipoDespacho(rs.getString("nm_despacho"));
-                tpEx.setNmLogin(rs.getString("nm_login"));
-                tpEx.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
+                tpDes.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
+                tpDes.setSgTipoDespacho(rs.getString("sg_despacho"));
+                tpDes.setNmTipoDespacho(rs.getString("nm_despacho"));
+                tpDes.setNmLogin(rs.getString("nm_login"));
+                tpDes.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
+
             }
             stmt.close();
-            return tpEx;
+            return tpDes;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
 //            rs.close();
-//            stmt.close();
-//            connection.close();
+            stmt.close();
+            connection.close();
+
         }
     }
 //METODO utilizado para inserir um novo Despacho no BANCO
 
-    public void insTipoDespacho(TipoDespacho tpEx) throws SQLException {
+    public void insTipoDespacho(TipoDespacho tpDes) throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -135,22 +139,24 @@ public class TipoDespachoDAO {
 
         try {
             stmt = connection.prepareStatement(sql);
-                stmt.setString(1, tpEx.getSgTipoDespacho());
-                stmt.setString(2, tpEx.getNmTipoDespacho());
-                stmt.setString(3, tpEx.getNmLogin());
-                stmt.setTimestamp(4, java.sql.Timestamp.valueOf(java.time.LocalDateTime.now()));
+            stmt.setString(1, tpDes.getSgTipoDespacho());
+            stmt.setString(2, tpDes.getNmTipoDespacho());
+            stmt.setString(3, tpDes.getNmLogin());
+            stmt.setTimestamp(4, java.sql.Timestamp.valueOf(java.time.LocalDateTime.now()));
+
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
 //            rs.close();
-//            stmt.close();
-//            connection.close();
+            stmt.close();
+            connection.close();
+
         }
     }
 
 //MEDOTO utilizado para realizar a alteração das informações de um Despacho
-    public void upTipoDespacho(TipoDespacho tpEx) throws SQLException {
+    public void upTipoDespacho(TipoDespacho tpDes) throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -159,19 +165,21 @@ public class TipoDespachoDAO {
 
         try {
             stmt = connection.prepareStatement(sql);
-                stmt.setString(1, tpEx.getSgTipoDespacho());
-                stmt.setString(2, tpEx.getNmTipoDespacho());
-                stmt.setString(3, tpEx.getNmLogin());
-                stmt.setTimestamp(4, java.sql.Timestamp.valueOf(java.time.LocalDateTime.now()));
-                stmt.setInt(5, tpEx.getPkTipoDespacho());
+            stmt.setString(1, tpDes.getSgTipoDespacho());
+            stmt.setString(2, tpDes.getNmTipoDespacho());
+            stmt.setString(3, tpDes.getNmLogin());
+            stmt.setTimestamp(4, java.sql.Timestamp.valueOf(java.time.LocalDateTime.now()));
+            stmt.setInt(5, tpDes.getPkTipoDespacho());
+
             stmt.execute();
             
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
 //            rs.close();
-//            stmt.close();
-//            connection.close();
+            stmt.close();
+            connection.close();
+
         }
     }
 
@@ -183,29 +191,31 @@ public class TipoDespachoDAO {
         String sql = "SELECT * FROM tbl_tipo_despacho_expediente ORDER BY nm_despacho";
 
         try {
-            List<TipoDespacho> lisTpEx = new ArrayList<TipoDespacho>();
+            List<TipoDespacho> lisTpDes = new ArrayList<TipoDespacho>();
             stmt = connection.prepareStatement(sql);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                TipoDespacho tpEx = new TipoDespacho();
-                tpEx.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
-                tpEx.setSgTipoDespacho(rs.getString("sg_despacho"));
-                tpEx.setNmTipoDespacho(rs.getString("nm_despacho"));
-                tpEx.setNmLogin(rs.getString("nm_login"));
-                tpEx.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
-                lisTpEx.add(tpEx);
+                TipoDespacho tpDes = new TipoDespacho();
+                tpDes.setPkTipoDespacho(rs.getInt("id_tipo_despacho"));
+                tpDes.setSgTipoDespacho(rs.getString("sg_despacho"));
+                tpDes.setNmTipoDespacho(rs.getString("nm_despacho"));
+                tpDes.setNmLogin(rs.getString("nm_login"));
+                tpDes.setDthrAtualizacao(rs.getString("dthr_atualizacao"));
+                lisTpDes.add(tpDes);
+
             }
             stmt.execute();
             stmt.close();
-            return lisTpEx;
+            return lisTpDes;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
 //            rs.close();
-//            stmt.close();
-//            connection.close();
+            stmt.close();
+            connection.close();
+
         }
     }
 

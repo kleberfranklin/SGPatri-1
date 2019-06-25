@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -84,7 +85,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -124,7 +125,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -156,7 +157,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -200,7 +201,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -529,7 +530,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -557,7 +558,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }
@@ -589,7 +590,7 @@ public class AutoCessaoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            rs.close();
+//            rs.close();
             stmt.close();
             connection.close();
         }

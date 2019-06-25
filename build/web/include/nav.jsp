@@ -36,6 +36,12 @@
                     </a>
                     <b class="arrow"></b>
                 </li>
+                <li class="">
+                    <a href="AgendamentoSala.jsp" title="Ministerio Publico">
+                        <i class="menu-icon fa fa-caret-right"></i> Sala de Reunião
+                    </a>
+                    <b class="arrow"></b>
+                </li>
                 <li class="disabled-li-menu">
                     <a href="#" title="Protocolo" >
                         <i class="menu-icon fa fa-caret-right"></i> Protocolo 
@@ -88,7 +94,7 @@
                 </li>
                 <li class="">
                     <a href="#" class="dropdown-toggle" title="Núcleo de Controle de Lavratura de Cessão">
-                        <i class="menu-icon fa fa-caret-right"></i> SCL
+                        <i class="menu-icon fa fa-caret-right "></i> SCL
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
                     <b class="arrow"></b>
@@ -119,9 +125,9 @@
                     <b class="arrow"></b>
 
                     <!--  PAGINAS DO CAP JA ESTAO QUASE PRONTA APENAS ATIVAR O MENU PARA VÊ-LAS -->
-                    <ul class="submenu disabled-li-menu">
+                    <ul class="submenu">
                         <li class="">
-                            <a href="Cap.jsp" title="Cadastro de Área Publica">CAP</a>
+                            <a href="CadastroAreaPublica.jsp" title="Cadastro de Área Publica">CAP</a>
                             <b class="arrow"></b>
                         </li>
                     </ul>    
@@ -293,7 +299,7 @@
 
         <!-- Menu Calendario-->
         <li class="">
-            <a class="disabled-li-menu" href="#" title="">
+            <a class="" href="CalendarioAgendamento.jsp" title="">
                 <i class="menu-icon fa fa-calendar"></i>
                 <span class="menu-text"> Calendário </span>
             </a>
@@ -313,7 +319,7 @@
         <li class="">
             <a class="" href="#" title="">
                 <i class="menu-icon fa fa-info-circle"></i>
-                <span class="menu-text"> Versão 1.3</span>
+                <span class="menu-text"> Versão 1.4</span>
             </a>
             <b class="arrow"></b>
         </li>

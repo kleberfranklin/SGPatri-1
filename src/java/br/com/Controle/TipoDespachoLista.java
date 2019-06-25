@@ -23,7 +23,7 @@ public class TipoDespachoLista implements Logica {
     public String executa(HttpServletRequest req,
             HttpServletResponse res) throws Exception {
 
-        TipoDespachoDAO tpExDAO = new TipoDespachoDAO();
+        TipoDespachoDAO tpDesDAO = new TipoDespachoDAO();
 
         /**
          * Atributos: pg = número da página atual pi = número da página inicial
@@ -69,7 +69,7 @@ public class TipoDespachoLista implements Logica {
         }
 
 //Carregando a quantidade de registro para calculdo da quantidade de paginas        
-        qtdRegistro = tpExDAO.qdTipoDespacho(q);
+        qtdRegistro = tpDesDAO.qdTipoDespacho(q);
         qtdPg = qtdRegistro / qtdLinha;
 
 //Logica da paginação            
@@ -103,8 +103,8 @@ public class TipoDespachoLista implements Logica {
         offset = ((pg * qtdLinha) - qtdLinha);
 
         //Populando o objeto lista 
-        List<TipoDespacho> listTpEx = new TipoDespachoDAO().listTipoDespacho(qtdLinha, offset, q);
-        req.setAttribute("listTpEx", listTpEx);
+        List<TipoDespacho> listTpDes = new TipoDespachoDAO().listTipoDespacho(qtdLinha, offset, q);
+        req.setAttribute("listTpDes", listTpDes);
 
         return "TipoDespachoLista.jsp?pg=" + pg + "&pi=" + pi + "&pf=" + pf + "&qtdPg=" + qtdPg + "&totalRes=" + qtdRegistro + "&q=" + q;
 
